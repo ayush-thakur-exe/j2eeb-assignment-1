@@ -1,0 +1,45 @@
+<html>
+<head xmlns:th="http://www.thymeleaf.org">
+	<title>Digital Evidence Recorder</title>
+	<link th:href="@{/resources/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div th:replace="header::header"></div>
+		
+		<div>
+			<h2>All the evidence ever recorded</h2>
+			<h3>Showing only in custody</h3>
+			<table>
+				<tr>
+					<th>Evidence ID</th>
+					<th>Description</th>
+					<th>Source Officer/Department</th>
+					<th>Date Of Acquisition</th>
+					<th>Custody Status</th>
+					<th>Last Custodian Name</th>
+					<th>Ecryption Status</th>
+				</tr>
+				<tr th:each="evidence : ${evidences}">
+					<td th:text="${evidence.evidenceId}"></td>
+					<td th:text="${evidence.description}"></td>
+					<td th:text="${evidence.sourceOfficerDepartment}"></td>
+					<td th:text="${evidence.dateOfAcquisition}"></td>
+					<td th:text="${evidence.custodyStatus}"></td>
+					<td th:text="${evidence.lastCustodianName}"></td>
+					<td th:text="${evidence.encryptionStatus}"></td>
+				</tr>
+			</table>
+
+			<a th:href="@{/evidence/form}" class="button-a">
+				Insert an evidence
+			</a>
+			<a th:href="@{/evidence/all}" class="button-a">
+				Show all
+			</a>
+		</div>
+
+		<div th:replace="footer::footer"></div>
+	</div>
+</body>
+</html>

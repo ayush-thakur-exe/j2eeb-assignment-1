@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Form</title>
+	<link th:href="@{/resources/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+    <div th:replace="header::header"></div>
+
+    <form method="post">
+        <label>Description:</label> <input type="text" name="description" />
+        <br/><br/>
+        <label>Source Officer/Department:</label> <input type="text" name="sourceOfficerDepartment" />
+        <br/><br/>
+        <label>Date Of Acquisition:</label> <input type="date" name="dateOfAcquisition" />
+        <br/><br/>
+        <label>Custody Status:</label> 
+        <select name="custodyStatus">
+            <option value="IN_CUSTODY">In Custody</option>
+            <option value="RELEASED">Released</option>
+        </select>
+        <br/><br/>
+        <label>Last Custodian Name:</label> <input type="text" name="lastCustodianName" />
+        <br/><br/>
+        <label>Ecryption Status:</label> 
+        <select name="encryptionStatus">
+            <option value="TRUE">True</option>
+            <option value="FALSE">False</option>
+        </select>
+        <br/><br/>
+        <input type="submit" value="Save"class="button-a" />
+    </form>
+
+    <div th:replace="footer::footer"></div>
+    </div>
+</body>
+</html>

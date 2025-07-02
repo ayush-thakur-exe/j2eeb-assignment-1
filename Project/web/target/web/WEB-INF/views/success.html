@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success!</title>
+	<link th:href="@{/resources/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+    <div th:replace="header::header"></div>
+    <div class="info-success">
+        Success!
+    </div>
+
+    <a th:href="@{/evidence/all}" class="button-a">
+        < Go Home
+    </a>
+    <div th:replace="footer::footer"></div>
+    </div>
+</body>
+</html>
