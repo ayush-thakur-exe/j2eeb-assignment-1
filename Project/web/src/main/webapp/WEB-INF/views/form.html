@@ -15,7 +15,8 @@
         <br/><br/>
         <label>Source Officer/Department:</label> <input type="text" name="sourceOfficerDepartment" />
         <br/><br/>
-        <label>Date Of Acquisition:</label> <input type="date" name="dateOfAcquisition" />
+        <label>Date Of Acquisition:</label> 
+        <input type="date" name="dateOfAcquisition" id="datePicker" />
         <br/><br/>
         <label>Custody Status:</label> 
         <select name="custodyStatus">
@@ -36,5 +37,13 @@
 
     <div th:replace="footer::footer"></div>
     </div>
+
+    <script>
+        let date = new Date()
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        document.querySelector("#datePicker").max = year + "-" + (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + day
+    </script>
 </body>
 </html>
